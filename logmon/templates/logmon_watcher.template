@@ -1,0 +1,24 @@
+          <@WATCHERNAME@>
+            active = yes
+            match = @MATCH@
+            level = @LEVEL@
+            subsystemid = @SUBSYSTEM@
+            message = @MESSAGE@
+            i18n_token =
+            restrict =
+            expect = no
+            abort = no
+            sendclear = no
+            count = no
+            separator =
+            suppid =
+            source =
+            target =
+            qos =
+            runcommandonmatch = no
+            commandexecutable =
+            commandarguments =
+            expect_message =
+            expect_level =
+            @VARIABLES_TEMPLATE@
+         </@WATCHERNAME@>

@@ -1,0 +1,9 @@
+<setup>
+   loglevel = @LOGLEVEL@
+   logsize = @LOGSIZE@
+   logfile = url_response.log
+   force_synchronous = @FORCE_SYNCH@
+   min_threads = @MIN_THREADS@
+   max_threads = @MAX_THREADS@
+   alarm_on_each_sample = @ALARM_EACH_SAMPLE@
+</setup>

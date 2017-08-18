@@ -1,0 +1,10 @@
+<setup>
+   logfile = jdbc_response.log
+   loglevel = @LOG_LEVEL@
+   report_level = @REPORT_LEVEL@
+   interval = @INTERVAL@
+   heartbeat = @HEARTBEAT@
+   connection_error = @CONNECTION_ERROR@
+   max_errors = @MAX_ERRORS@
+   COM_timeout_delay = @COMM_TIMEOUT@
+</setup>

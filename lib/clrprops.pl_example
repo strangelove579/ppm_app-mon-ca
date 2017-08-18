@@ -1,0 +1,35 @@
+#!/usr/bin/perl
+# Auth John Achee
+# 1/29/13
+
+use lib qw{/fs0/od/nimsoft/probes/super/ppm_app/lib};
+use ClrProps;
+
+my $props = ClrProps->new();
+
+#
+#   Get all keys that are queried by ClrProps.pm
+#
+foreach ($props->get_keys()) {
+
+  print "$_\n";
+
+}
+print "\n";
+
+#
+#  Get all key/val pairs either defined or undefined
+#
+foreach ($props->get_pairs()) {
+  print "$_->[0] => $_->[1]\n";
+
+}
+
+
+#
+# Get individual property by key
+#
+print $props->bo_user() . "\n";
+
+
+

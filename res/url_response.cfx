@@ -1,0 +1,165 @@
+<setup>
+   loglevel = 0
+   logsize = 100
+   logfile = url_response.log
+   force_synchronous = no
+   min_threads = 10
+   max_threads = 100
+   alarm_on_each_sample = yes
+   sendAlarmOnEveryInterval = no
+</setup>
+<profiles>
+   <MSN>
+      url = http://www.msn.com
+      active = no
+      timeout = 15
+      retry = 3
+      QoS = yes
+      interval = 300
+      <alarm>
+         active = yes
+         max_samples = 5
+         average = yes
+         threshold = 8000
+         thresholdBelow = 0
+      </alarm>
+   </MSN>
+</profiles>
+<messages>
+   <ConfigError>
+      text = Illegal URL '$url' defined in profile '$profile'
+      i18n_token = as#network.url_response.config_error
+      level = major
+      subsystem = 1.1.14
+      token = config_error
+      variables = profile url
+   </ConfigError>
+   <TimeLimit>
+      text = URL response for '$profile' is $timer $unit, which exceeds the threshold ($threshold ms)
+      i18n_token = as#network.url_response.time_limit
+      level = minor
+      subsystem = 1.1.14
+      token = time_limit
+      variables = profile timer unit threshold
+   </TimeLimit>
+   <BelowTimeLimit>
+      text = URL response for '$profile' is $timer $unit, which is below the low threshold ($thresholdBelow ms)
+      i18n_token = as#network.url_response.below_time_limit
+      level = minor
+      subsystem = 1.1.14
+      token = below_time_limit
+      variables = profile timer unit thresholdBelow
+   </BelowTimeLimit>
+   <DoesNotContain>
+      text = URL content for '$profile' does not contain the expected text '$string'
+      i18n_token = as#network.url_response.does_not_contain
+      level = major
+      subsystem = 1.1.14
+      token = does_not_contain
+      variables = profile string
+   </DoesNotContain>
+   <ContainsUnexpected>
+      text = URL content for '$profile' contains the unexpected text '$string'
+      i18n_token = as#network.url_response.contains_unexpected
+      level = major
+      subsystem = 1.1.14
+      token = contains_unexpected
+      variables = profile string
+   </ContainsUnexpected>
+   <FetchThresholdError>
+      text = URL content for '$profile' contains lesser no of bytes than threshold '$thresholdFetchBytes bytes'
+      i18n_token = as#network.url_response.contains_unexpected_bytes
+      level = major
+      subsystem = 1.1.14
+      token = contains_unexpected_bytes
+      variables = profile unexpected no of bytes
+   </FetchThresholdError>
+   <Failed>
+      text = URL response for '$profile' failed. $code $description
+      i18n_token = as#network.url_response.failed
+      level = major
+      subsystem = 1.1.14
+      token = failed
+      variables = profile code description
+   </Failed>
+   <Delayed>
+      text = $message Profile $profile is delayed because $reason
+      i18n_token = as#network.url_response.delayed
+      level = minor
+      subsystem = 1.1.14
+      token = delayed
+      variables = profile reason
+   </Delayed>
+   <Clear>
+      text = URL response for '$url' in '$profile' is checked and ok.
+      i18n_token = as#network.url_response.clear
+      level = clear
+      subsystem = 1.1.14
+      token = clear_alarm
+      variables = profile url
+   </Clear>
+   <DNSResolveTime>
+      text = URL dns resolve time for profile '$profile' is '$dnsresolvetime ms' which is greater than threshold '$thresholddnsresolvetime ms'
+      i18n_token = as#network.url_response.dns_resolution_time
+      level = major
+      subsystem = 1.1.14
+      token = dns_resolution_time
+      variables = profile dnsresolvetime thresholddnsresolvetime
+   </DNSResolveTime>
+   <DownloadTime>
+      text = URL download time for profile '$profile' is '$downloadtime ms' which is greater than threshold '$thresholddownloadtime ms'
+      i18n_token = as#network.url_response.download_time
+      level = major
+      subsystem = 1.1.14
+      token = download_time
+      variables = profile downloadtime thresholddownloadtime
+   </DownloadTime>
+   <FirstByteFetchTime>
+      text = URL first byte fetch for profile '$profile' is '$timefirstbyte ms' which is greater than threshold '$thresholdtimefirstbyte ms'
+      i18n_token = as#network.url_response.first_byte_fetch_time
+      level = major
+      subsystem = 1.1.14
+      token = first_byte_fetch_time
+      variables = profile timefirstbyte thresholdtimefirstbyte
+   </FirstByteFetchTime>
+   <LastByteFetchTime>
+      text = URL last byte fetch for profile '$profile' is '$timelastbyte ms' which is greater than threshold '$thresholdtimelastbyte ms'
+      i18n_token = as#network.url_response.last_byte_fetch_time
+      level = major
+      subsystem = 1.1.14
+      token = last_byte_fetch_time
+      variables = profile timelastbyte thresholdtimelastbyte
+   </LastByteFetchTime>
+   <RedirectTime>
+      text = URL redirect time for profile '$profile' is '$redirecttime ms' which is greater than threshold '$thresholdredirecttime ms'
+      i18n_token = as#network.url_response.redirect_time
+      level = major
+      subsystem = 1.1.14
+      token = redirect_time
+      variables = profile redirecttime thresholdredirecttime
+   </RedirectTime>
+   <TCPConnectTime>
+      text = URL TCP connect time for profile '$profile' is '$tcpconnecttime ms' which is greater than threshold '$thresholdtcpconnecttime ms'
+      i18n_token = as#network.url_response.tcp_connect_time
+      level = major
+      subsystem = 1.1.14
+      token = tcp_connect_time
+      variables = profile tcpconnecttime thresholdtcpconnecttime
+   </TCPConnectTime>
+   <CertExpired>
+      text = URL Certificate Expired for profile '$profile'
+      i18n_token = as#network.url_response.cert_expired
+      level = major
+      subsystem = 1.1.14
+      token = cert_expired
+      variables = profile
+   </CertExpired>
+   <DaysToCertExpire>
+      text = URL Certificate due to expire in '$daystocertexpiry' days for profile '$profile'
+      i18n_token = as#network.url_response.days_to_cert_expire
+      level = major
+      subsystem = 1.1.14
+      token = days_to_cert_expire
+      variables = profile daystocertexpiry
+   </DaysToCertExpire>
+</messages>

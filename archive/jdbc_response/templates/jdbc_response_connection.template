@@ -1,0 +1,15 @@
+   <@DBSID@>
+      url = @JDBC_URL@
+      driver = oracle.jdbc.driver.OracleDriver
+      path = /fs0/od/nimsoft/probes/database/jdbc_response/jar/sql_drv.jar
+      user = monitor
+      password = lMigFGGTL+OH17fAOcnLng==
+      timeout = @TIMEOUT@
+      subsystem = 2001.13.7.
+      parameters =
+      error_severity = @ERROR_SEVERITY@
+      clear_severity = clear
+      error_message = $profile $url - connection error
+      clear_message = $profile $url - connection established
+      winauth = no
+   </@DBSID@>

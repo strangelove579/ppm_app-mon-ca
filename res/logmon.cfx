@@ -1,0 +1,22 @@
+<setup> overwrite
+   logfile = logmon.log
+   logsize = 100
+   cfg_ver = 2
+   debug = 0
+</setup>
+<profiles> overwrite
+   <my log> overwrite
+      active = no
+      interval = 15 min
+      scanfile = /var/tmp/alert_niku.log
+      scanmode = updates
+      alarm = yes
+      qos = yes
+      message = no
+      subject = 
+      max_alarms = 
+      max_alarm_msg = 
+      password = 
+      user = 
+   </my log>
+</profiles>

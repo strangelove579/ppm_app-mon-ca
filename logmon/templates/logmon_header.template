@@ -1,0 +1,7 @@
+<setup>
+   loglevel = 1
+   logfile = logmon.log
+   logsize = @LOGSIZE@
+   cfg_ver = 2
+   debug = @DEBUG@
+</setup>

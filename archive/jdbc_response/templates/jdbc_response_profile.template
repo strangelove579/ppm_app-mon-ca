@@ -1,0 +1,78 @@
+   <@NAME@-@DBSID@>
+      active = yes
+      description = @NAME@
+      connection = @DBSID@
+      interval = @INTERVAL@
+      timeout = @TIMEOUT@
+      query = @QUERY@
+      file = 
+      query_use = query
+      cursor = server
+      timeout_error = major
+      no_record_severity = major
+      no_record_message = OD Monitoring ID: @SUBSYSTEM@ $profile/$server/$database - query returned no record
+      no_record_supp_key = value
+      no_record_qos = yes
+      scheduling = rules
+      source = 
+      <response>
+         active = no
+         qos = no
+         network = inclusive
+         type = total
+         pings = 5
+         low_severity = warning
+         low_message = $profile $url - time [ $time ms ] > threshold [ $threshold ms].
+         low_threshold = 90
+         high_severity = minor
+         high_message = $profile $url - time [ $time ms ] > threshold [ $threshold ms].
+         high_threshold = 150
+         clear_severity = clear
+         clear_message = $profile $url - response time [ $time ms ] - alarm now cleared
+      </response>
+      <count>
+         active = no
+         qos = no
+         low_severity = warning
+         low_message = $profile $url - $rows rows $condition threshold [ $threshold ]
+         low_threshold = 5
+         high_severity = minor
+         high_message = $profile $url - $rows rows $condition threshold [ $threshold ]
+         high_threshold = 10
+         clear_severity = clear
+         clear_message = $profile $url - alarm cleared: rows = $rows
+         condition = >
+      </count>
+      <value>
+         active = yes
+         qos = @QOS@
+         comparison = @COMPARISON@
+         NULLs_handling = as_zero
+         columns = @COLUMN@
+         column_type = 
+         row_key = stor_id
+         low_severity = @LOW_SEVERITY@
+         low_message = OD Monitoring ID: @SUBSYSTEM@ $profile $url - value $value $condition threshold [ $threshold ]
+         low_threshold = @LOW_THRESHOLD@
+         high_severity = @HIGH_SEVERITY@
+         high_message = OD Monitoring ID: @SUBSYSTEM@ $profile $url - value $value $condition threshold [ $threshold ]
+         high_threshold = @HIGH_THRESHOLD@
+         clear_severity = clear
+         clear_message = $profile $url - value $value - alarm now cleared
+         low_condition = @LOW_CONDITION@
+         high_condition = @HIGH_CONDITION@
+         low_cond_not = no
+         high_cond_not = no
+         <qos_lists>
+            <0>
+               qos_name = QOS_SQL_VALUE
+               qos_desc = SQL Query Value
+               qos_unit = value
+               qos_abbr = value
+               qos_max = 0
+               qos_value = sample_column
+               qos_key = 
+            </0>
+         </qos_lists>
+      </value>
+   </@NAME@-@DBSID@>

@@ -1,0 +1,61 @@
+   <@WATCHER@>
+      active = yes
+      description = @WATCHER@
+      action = none
+      command = 
+      arguments = 
+      process = 
+      process_count_type = 
+      process_count = 
+      report = down
+      execute = 
+      cpu_num_check = 
+      cpu_usage_max = 
+      cpu_usage_min = 
+      user = 
+      password = 
+      max_size = 
+      min_size = 
+      thread_count_limit = 
+      thread_count_type = 
+      thread_count_min = 
+      thread_count_max = 
+      track_by_pid = no
+      process_restart = no
+      invert_owner = no
+      proc_cmd_line = @PCMD@
+      scan_proc_owner = no
+      max_restarts = 
+      scan_cpu_usage = no
+      scan_size = no
+      scan_threads = no
+      scan_handles = no
+      scan_proc_parent = False
+      scan_proc_parent_name = 
+      scan_proc_cmd_line = yes
+      group = 
+      qos_process_handles = False
+      handle_count_error = 
+      handle_count_warning = 
+      resource_execute = no
+      resource_command = 
+      resource_arguments = 
+      alarm_schedule = Every_5min
+      qos_schedule = 
+      qos_target = 
+      qos_process_state = no 
+      qos_process_cpu = no
+      qos_process_memory = no
+      qos_process_count = no
+      qos_process_threads = no
+      subsystem = @SUBSYSTEM@
+      <window>
+         active = no
+         name = 
+         class = 
+         expect = 
+         on_error = 
+      </window>
+      <message>
+      </message>
+   </@WATCHER@>

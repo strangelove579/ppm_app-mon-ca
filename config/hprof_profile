@@ -1,0 +1,12 @@
+<hprof_profile> overwrite
+      name = HPROF log file creation, component of automated HPROF analysis 
+      active = yes
+      description = Create the hprof file when it find it
+      exclusive = yes
+      cmd = /fs0/od/nimsoft/probes/super/ppm_app/bin/hprof.pl
+      schedule = RRULE:FREQ=HOURLY;INTERVAL=1
+      level = 0
+      timeout = 30
+      username = 
+      password = 
+   </hprof_profile>

@@ -1,0 +1,50 @@
+<schedules>
+   <Every_1min>
+      type = Recurring Event
+      time_type = once
+      updated = yes
+      recurrent_event_spec = RRULE:FREQ=MINUTELY;INTERVAL=1
+   </Every_1min>
+   <Every_5min>
+      type = Recurring Event
+      time_type = once
+      updated = no
+      recurrent_event_spec = RRULE:FREQ=MINUTELY;INTERVAL=5
+   </Every_5min>
+   <Every_15min>
+      type = Recurring Event
+      time_type = once
+      updated = yes
+      recurrent_event_spec = RRULE:FREQ=MINUTELY;INTERVAL=15
+   </Every_15min>
+   <Every_30min>
+      type = Recurring Event
+      time_type = once
+      updated = yes
+      recurrent_event_spec = RRULE:FREQ=MINUTELY;INTERVAL=30
+   </Every_30min>
+   <Every_1hour>
+      type = Recurring Event
+      time_type = once
+      updated = yes
+      recurrent_event_spec = RRULE:FREQ=HOURLY;INTERVAL=1
+   </Every_1hour>
+   <Every_12hours>
+      type = Recurring Event
+      time_type = once
+      updated = yes
+      recurrent_event_spec = RRULE:FREQ=HOURLY;INTERVAL=12
+   </Every_12hours>
+   <Every_1day>
+      type = Recurring Event
+      time_type = once
+      updated = yes
+      recurrent_event_spec = RRULE:FREQ=DAILY;INTERVAL=1
+   </Every_1day>
+   <Every_1week>
+      type = Recurring Event
+      time_type = once
+      updated = yes
+      recurrent_event_spec = RRULE:FREQ=WEEKLY;INTERVAL=1
+   </Every_1week>
+</schedules>

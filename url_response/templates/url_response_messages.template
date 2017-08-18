@@ -1,0 +1,137 @@
+   <BelowTimeLimit>
+      text = URL response for '$profile' is $timer $unit, which is below the low threshold ($thresholdBelow ms)
+      level = minor
+      subsystem = 2001.13.5.
+      token = below_time_limit
+      variables = profile timer unit thresholdBelow
+      i18n_token = as#network.url_response.below_time_limit
+   </BelowTimeLimit>
+   <CertExpired>
+      text = URL Certificate Expired for profile '$profile' $url
+      level = major
+      subsystem = 2001.13.5.
+      token = cert_expired
+      variables = profile
+      i18n_token = as#network.url_response.cert_expired
+   </CertExpired>
+   <Clear>
+      text = URL response for '$url' in '$profile' is checked and ok.
+      level = clear
+      subsystem = 2001.13.5.
+      token = clear_alarm
+      variables = profile url
+      i18n_token = as#network.url_response.clear
+   </Clear>
+   <ConfigError>
+      text = Illegal URL $url defined in profile $profile
+      level = major
+      subsystem = 2001.13.5.
+      token = config_error
+      variables = profile url
+      i18n_token = as#network.url_response.config_error
+   </ConfigError>
+   <ContainsUnexpected>
+      text = URL content for '$profile' contains the unexpected text '$string'
+      level = critical
+      subsystem = 2001.13.5.
+      token = contains_unexpected
+      variables = profile string
+      i18n_token = as#network.url_response.contains_unexpected
+   </ContainsUnexpected>
+   <DaysToCertExpire>
+      text = URL Certificate due to expire in '$daystocertexpiry' days for profile '$profile' $url
+      level = major
+      subsystem = 2001.13.5.
+      token = days_to_cert_expire
+      variables = profile daystocertexpiry
+      i18n_token = as#network.url_response.days_to_cert_expire
+   </DaysToCertExpire>
+   <Delayed>
+      text = $message Profile $profile is delayed because $reason
+      level = minor
+      subsystem = 2001.13.5.
+      token = delayed
+      variables = profile reason
+      i18n_token = as#network.url_response.delayed
+   </Delayed>
+   <DNSResolveTime>
+      text = URL dns resolve time for profile '$profile' is '$dnsresolvetime ms' which is greater than threshold '$thresholddnsresolvetime ms'
+      level = major
+      subsystem = 2001.13.5.
+      token = dns_resolution_time
+      variables = profile dnsresolvetime thresholddnsresolvetime
+      i18n_token = as#network.url_response.dns_resolution_time
+   </DNSResolveTime>
+   <DoesNotContain>
+      text = URL content for '$profile' does not contain the expected text '$string'
+      level = critical
+      subsystem = 2001.13.5.
+      token = does_not_contain
+      variables = profile string
+      i18n_token = as#network.url_response.does_not_contain
+   </DoesNotContain>
+   <DownloadTime>
+      text = URL download time for profile '$profile' is '$downloadtime ms' which is greater than threshold '$thresholddownloadtime ms'
+      level = major
+      subsystem = 2001.13.5.
+      token = download_time
+      variables = profile downloadtime thresholddownloadtime
+      i18n_token = as#network.url_response.download_time
+   </DownloadTime>
+   <Failed>
+      text = URL response for '$profile' $url failed. $code $description
+      level = critical
+      subsystem = 2001.13.5.
+      token = failed
+      variables = profile code description
+      i18n_token = as#network.url_response.failed
+   </Failed>
+   <FetchThresholdError>
+      text = URL content for '$profile' contains lesser no of bytes than threshold '$thresholdFetchBytes bytes'
+      level = major
+      subsystem = 2001.13.5.
+      token = contains_unexpected_bytes
+      variables = profile unexpected no of bytes
+      i18n_token = as#network.url_response.contains_unexpected_bytes
+   </FetchThresholdError>
+   <FirstByteFetchTime>
+      text = URL first byte fetch for profile '$profile' is '$timefirstbyte ms' which is greater than threshold '$thresholdtimefirstbyte ms'
+      level = major
+      subsystem = 2001.13.5.
+      token = first_byte_fetch_time
+      variables = profile timefirstbyte thresholdtimefirstbyte
+      i18n_token = as#network.url_response.first_byte_fetch_time
+   </FirstByteFetchTime>
+   <LastByteFetchTime>
+      text = URL last byte fetch for profile '$profile' is '$timelastbyte ms' which is greater than threshold '$thresholdtimelastbyte ms'
+      level = major
+      subsystem = 2001.13.5.
+      token = last_byte_fetch_time
+      variables = profile timelastbyte thresholdtimelastbyte
+      i18n_token = as#network.url_response.last_byte_fetch_time
+   </LastByteFetchTime>
+   <RedirectTime>
+      text = URL redirect time for profile '$profile' is '$redirecttime ms' which is greater than threshold '$thresholdredirecttime ms'
+      level = major
+      subsystem = 2001.13.5.
+      token = redirect_time
+      variables = profile redirecttime thresholdredirecttime
+      i18n_token = as#network.url_response.redirect_time
+   </RedirectTime>
+   <TCPConnectTime>
+      text = URL TCP connect time for profile '$profile' is '$tcpconnecttime ms' which is greater than threshold '$thresholdtcpconnecttime ms'
+      level = critical
+      subsystem = 2001.13.5.
+      token = tcp_connect_time
+      variables = profile tcpconnecttime thresholdtcpconnecttime
+      i18n_token = as#network.url_response.tcp_connect_time
+   </TCPConnectTime>
+   <TimeLimit>
+      text = URL response for '$profile' $url is $timer $unit, which exceeds the threshold ($threshold ms)
+      level = critical 
+      subsystem = 2001.13.5.
+      token = time_limit
+      variables = profile timer unit threshold
+      i18n_token = as#network.url_response.time_limit
+   </TimeLimit>
+

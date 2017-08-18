@@ -1,0 +1,32 @@
+   <@PROFILE@>
+      active = @PROFILE_ENABLE@
+      interval = @INTERVAL@
+      scanfile = @FILENAME@
+      scanmode = @SCANMODE@
+      alarm = @ALARM@ 
+      qos = @QOS@
+      message = no
+      subject =
+      max_alarms =
+      max_alarm_msg =
+      password =
+      user =
+      timeout = 15
+      retries = 3
+      url_alarm_sev = 0
+      urluser = 
+      challengeresponse = no
+      proxyhost = 
+      proxyport = 
+      proxyuser = 
+      SslSettings = 0
+      <excludes>
+           <@PROFILE@>
+              active = @EXCLUDES@
+              match =  @EMATCH@
+           </@PROFILE@>
+      </excludes>
+      <watchers>
+         @WATCHER@
+      </watchers>
+   </@PROFILE@>

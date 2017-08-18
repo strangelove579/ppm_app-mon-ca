@@ -1,0 +1,109 @@
+<setup> 
+   logfile = jdbc_response.log
+   loglevel = 0
+   report_level = 1
+   interval = 15m
+   heartbeat = 10sec
+   connection_error = major
+   max_errors = 0
+   COM_timeout_delay = 1
+   logsize = 100
+</setup>
+<connections> 
+   <sample_conn> 
+      url = jdbc:sqlserver://<SERVER>:1433;DatabaseName=NimsoftSLM
+      driver = com.microsoft.sqlserver.jdbc.SQLServerDriver
+      path = /Program Files/NimBUS/probes/database/jdbc_response/jar/sql_drv.jar
+      user = 
+      password = 
+      timeout = 30sec
+      subsystem = 1.1.13
+      parameters = 
+      error_severity = major
+      clear_severity = clear
+      error_message = $profile $url - connection error
+      clear_message = $profile $url - connection established
+      winauth = no
+   </sample_conn>
+</connections>
+<profiles> 
+   <sample_prof> 
+      active = no
+      description = sample profile
+      connection = sample_conn
+      interval = 5m
+      timeout = 5m
+      timeout_error = major
+      query = 
+      cursor = server
+      no_record_severity = major
+      no_record_message = $profile $url - query returned no record
+      no_record_supp_key = value
+      no_record_qos = yes
+      file = 
+      query_use = query
+      scheduling = rules
+      source = 
+      <response> overwrite
+         active = no
+         type = total
+         qos = no
+         network = inclusive
+         pings = 5
+         low_severity = warning
+         low_threshold = 90
+         low_message = $profile $url - time [ $time ms ] > threshold [ $threshold ms].
+         high_severity = minor
+         high_threshold = 150
+         high_message = $profile $url - time [ $time ms ] > threshold [ $threshold ms].
+         clear_severity = clear
+         clear_message = $profile $url - response time [ $time ms ] - alarm now cleared
+      </response>
+      <count> overwrite
+         active = no
+         qos = no
+         low_severity = warning
+         low_threshold = 5
+         low_message = $profile $url - $rows rows $condition threshold [ $threshold ]
+         high_severity = minor
+         high_threshold = 10
+         high_message = $profile $url - $rows rows $condition threshold [ $threshold ]
+         clear_severity = clear
+         clear_message = $profile $url - alarm cleared: rows = $rows
+         condition = >
+      </count>
+      <value> overwrite
+         active = no
+         qos = no
+         comparison = numeric
+         columns = 1
+         row_key = stor_id
+         low_severity = warning
+         low_threshold = 30
+         low_message = $profile $url - value $value $condition threshold [ $threshold ]
+         low_condition = >
+         low_cond_not = no
+         high_severity = minor
+         high_threshold = 50
+         high_message = $profile $url - value $value $condition threshold [ $threshold ]
+         high_condition = >
+         high_cond_not = no
+         NULLs_handling = as_zero
+         clear_message = $profile $url - value $value - alarm now cleared
+         clear_severity = clear
+         column_type = 
+         <qos_lists> overwrite
+            <0> overwrite
+               qos_name = QOS_SQL_VALUE
+               qos_desc = SQL Query Value
+               qos_unit = value
+               qos_abbr = value
+               qos_max = 0
+               qos_value = sample_column
+               qos_key = 
+            </0>
+         </qos_lists>
+      </value>
+   </sample_prof>
+</profiles>
+
