@@ -1,14 +1,13 @@
 #!/bin/bash
+# Build script for ppm_app
+# !! Run this to wrap this code into the ppm_app.tar 
+# Tar will be created here: /tmp/ppm_app.tar
+
 
 SCRIPT=$(readlink -f $0)
 BIN=$(dirname $SCRIPT)
 PACKAGEHOME=$(dirname $BIN)
 
-
-
-if [ -z $PACKAGEHOME  ] || [ ! -d "$PACKAGEHOME/bin" ]; then
-  echo "Package home argument is required in call to $0"
-fi
 
 TS=$(date +"%m%d%Y%H%M%S")
 TMPDIR=${PACKAGEHOME}_$TS
