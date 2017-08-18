@@ -1,7 +1,10 @@
 #!/bin/bash
 
+SCRIPT=$(readlink -f $0)
+BIN=$(dirname $SCRIPT)
+PACKAGEHOME=$(dirname $BIN)
 
-PACKAGEHOME="$1"
+
 
 if [ -z $PACKAGEHOME  ] || [ ! -d "$PACKAGEHOME/bin" ]; then
   echo "Package home argument is required in call to $0"
@@ -25,7 +28,7 @@ cd $TMPDIR/config
 
 echo "Removing logs: ./log/*.log..."
 cd $TMPDIR/log
-/bin/rm -f *.log
+/bin/rm -f *
 
 echo "Done cleaning package"
 
